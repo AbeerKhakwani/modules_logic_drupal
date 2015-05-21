@@ -1,0 +1,5 @@
+name = Title Case
+description = Caps the first letter.
+package = Epicodus Examples
+core = 7.x
+files[] = title.module

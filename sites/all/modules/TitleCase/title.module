@@ -1,0 +1,64 @@
+<?php
+
+function title_menu() {
+    $items['title'] = array(
+        'title' => 'Title Case The Word!',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('title_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['title_page'] = array(
+        'title' => 'Title Cased!',
+        'page callback' => 'display_titled',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function title_form() {
+    $form['sentence'] = array(
+        '#title' => 'Sentence',
+        '#type' => 'textfield',
+        '#description' => t('Please enter the sentence you want Title Cased.'),
+
+    );
+    $form['submit']     = array(
+    '#type' => 'submit',
+    '#value' => 'Go'
+   );
+   return $form;
+}
+
+
+function title_form_submit($form, &$form_state){
+
+     $sentence = $form_state['values']['sentence'];
+    //  $sentence =ucwords($sentence);
+     $output= '';
+     $sentence_exploded = explode(" ",$sentence);
+     foreach($sentence_exploded as $word) {
+         if($word == 'the') {
+             $output.= ' '. lcfirst($word);
+         }
+         else{
+             $output.= ' '. ucfirst($word);
+
+         }
+
+     }
+    //  $sentence_final = implode(" ",$sentence_exploded);
+     $final = ucfirst($output);
+     $_SESSION['titlecase']= $final;
+     $form_state['redirect']= 'title_page';
+
+
+
+}
+
+function  display_titled(){
+
+    $output= '<p>The sentence Title Cased is:'.  $_SESSION['titlecase'] . '</p>';
+    return $output;
+}
