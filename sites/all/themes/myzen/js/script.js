@@ -17,7 +17,12 @@
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
-    // Place your code here.
+      $(document).ready(function () {
+          $('.header__name-and-slogan').addClass('red jumbotron');
+          $('.header__name-and-slogan').click(function(){
+              alert( "were so cool." );
+          });
+      });
 
   }
 };

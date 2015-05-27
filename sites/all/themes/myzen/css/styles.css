@@ -20,7 +20,7 @@
 
 /* applies Bootstrap*/
 /*@import url("icons.css");*/
-/*@import "bootstrap/css/bootstrap.min.css";*/
+@import "bootstrap/css/bootstrap.min.css";
 
 /* SMACSS theme rules */
 /* @import "theme-A.css"; */
@@ -46,13 +46,9 @@ a:hover{
 
 
 }
-.header__name-and-slogan{
-    padding: 30px 15px;
-    margin-bottom: 30px;
-    color: inherit;
-    background-color: #eee;
 
-
+.red{
+     background-color:#006a84;
 }
 .header__logo-image{
     height:100px;
