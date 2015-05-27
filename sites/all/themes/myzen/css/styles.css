@@ -17,10 +17,14 @@
 /* Optionally, add your own components here. */
 @import "print.css";
 
+
+/* applies Bootstrap*/
+/*@import url("icons.css");*/
+/*@import "bootstrap/css/bootstrap.min.css";*/
+
 /* SMACSS theme rules */
 /* @import "theme-A.css"; */
 /* @import "theme-B.css"; */
-
 body{
     background-color: #00AF64;
     color: #333;
@@ -36,5 +40,24 @@ a, a:link {
 }
 a:hover{
   color: #006a84;
+}
+.header__name-and-slogan{
+     color:#006a84;
 
+
+}
+.header__name-and-slogan{
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+
+
+}
+.header__logo-image{
+    height:100px;
+    width:100px;
+}
+.form-submit{
+    margin-top:5px;
 }
